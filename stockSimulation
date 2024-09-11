@@ -1,0 +1,53 @@
+import random
+
+# functions to return data on stock market
+
+
+# return percentage gives percentage return rate for any starting
+# and ending values (helper function used for "year to date" calcs)
+def return_percentage(final, initial):
+    result_percent = ((final - initial)/(initial))*100
+    return result_percent;
+
+# would take a list of percentage return rates and order them
+# allows us to display the stat later on the screen
+def return_top_movers(return_list):
+    return_list.sort(reverse=True)
+    return return_list
+
+# simulates variability in the stock market
+def rand_num_generator(ticker):
+    rand_num = random.uniform(-10.0, 10.0)
+    print(rand_num)
+    ticker = ticker + ticker*(rand_num/100)
+    return ticker
+
+if __name__ == '__main__':
+    # print("Hello World")
+    result_percent = return_percentage(30, 25);
+    # print(result_percent)
+    return_list = [result_percent, 10.0, -200.0, 50.0, 12.0]
+    top_movers = return_top_movers(return_list)
+
+    # idea to store data in a map for each of the tickers
+    # give each ticker an ipo set by the banker at the start of
+    # the game. also have vectors/arrays store all data to
+    # make graphs which are attached to ticker
+    # plan on working on this later with Shan
+
+    my_tickers = {
+        "BLVD": 25,
+        "OPUS": 15
+    }
+
+    new_ticker = rand_num_generator(my_tickers["BLVD"])
+    print(new_ticker)
+
+
+
+
+    # for element in top_movers:
+    #     print(element)
+
+
+
